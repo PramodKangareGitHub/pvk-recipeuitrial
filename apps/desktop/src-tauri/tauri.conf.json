@@ -1,0 +1,96 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
+  "build": {
+    "beforeBuildCommand": "npm run build",
+    "beforeDevCommand": "npm run dev",
+    "devPath": "http://localhost:5175",
+    "distDir": "../out",
+    "withGlobalTauri": true
+  },
+  "package": {
+    "productName": "RecipeUI",
+    "version": "0.8.10"
+  },
+  "tauri": {
+    "allowlist": {
+      "app": {
+        "all": true
+      },
+      "all": false,
+      "clipboard": {
+        "all": true
+      },
+      "http": {
+        "all": true,
+        "request": true
+      },
+      "dialog": {
+        "all": false,
+        "ask": true,
+        "confirm": true,
+        "message": true,
+        "open": false,
+        "save": false
+      },
+      "shell": {
+        "all": false,
+        "execute": true,
+        "open": true,
+        "scope": [],
+        "sidecar": false
+      },
+
+      "os": {
+        "all": true
+      }
+    },
+
+    "bundle": {
+      "active": true,
+      "category": "DeveloperTool",
+      "copyright": "recipeui",
+      "deb": {
+        "depends": []
+      },
+      "externalBin": [],
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "identifier": "com.recipeui",
+      "longDescription": "",
+      "resources": [],
+      "shortDescription": "",
+      "targets": "all",
+      "windows": {
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": ""
+      }
+    },
+    "security": {
+      "csp": null
+    },
+    "updater": {
+      "active": true,
+      "endpoints": [
+        "https://github.com/RecipeUI/RecipeUI/releases/latest/download/latest.json"
+      ],
+      "dialog": true,
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEJDMzc5QjhDNkVFMjZGRTMKUldUamIrSnVqSnMzdkdVTkZQY3RRL3Z6alhSZU1kYTdHTVUyTk5NRjJQaHNYZ3FJK29JMXZYQlIK"
+    },
+    "windows": [
+      {
+        "resizable": true,
+        "title": "RecipeUI",
+        "height": 800,
+        "minHeight": 800,
+        "width": 1200,
+        "minWidth": 1200
+      }
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = "mongodb://nwfdbuatuser:ABdSalUlLg@zipmgoelddv01.nw1.nwestnetwork.com:27017/receipe?authSource=admin&replicaSet=uat"
+}
+
+
+model User {
+  id      String  @id @default(auto()) @map("_id") @db.ObjectId
+  email   String   @unique
+  name    String
+}
+
+model Config {
+  id      String  @id @default(auto()) @map("_id") @db.ObjectId
+  key     String @unique
+  value   String
+}
+
+
+model Sessions {
+  id      String  @id @default(auto()) @map("_id") @db.ObjectId
+  key     String @unique
+  value   Json
+}
+
+
+model SessionFolders {
+  id      String  @id @default(auto()) @map("_id") @db.ObjectId
+  key     String @unique
+  value   Json
+}
+
+
+
+model Secrets {
+  id      String  @id @default(auto()) @map("_id") @db.ObjectId
+  key     String @unique
+  value   Json
+}
+
+
+model Parameters {
+  id      String  @id @default(auto()) @map("_id") @db.ObjectId
+  key     String @unique
+  value   Json
+}
+
+
+model Output {
+  id      String  @id @default(auto()) @map("_id") @db.ObjectId
+  key     String @unique
+  value   Json []
+}
